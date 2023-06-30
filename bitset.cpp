@@ -13,5 +13,5 @@ void Bitset::deallocate(size_t block) {
 }
 
 bool Bitset::operator[](size_t block) const {
-        return (bool) (bitset[block / 8] & (1 << (block % 8)));
-    }
+  return (bool)(bitset[block / 8] & (1 << (block % 8)));
+}
