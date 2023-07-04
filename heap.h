@@ -5,10 +5,14 @@ const size_t MAX_BLOCK_SIZE = 64;
 class Heap {
 public:
     Heap() = default;
-
     Heap(uintptr_t *pool, size_t size);
 
+    void *heapAlloc(size_t size);
+    void heapFree(uintptr_t *block);
+
 private:
+
+
     int allocatedCnt = 0;
 
     Bitset bitset;

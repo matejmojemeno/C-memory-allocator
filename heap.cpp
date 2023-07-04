@@ -2,7 +2,8 @@
 
 Heap::Heap(uintptr_t *pool, size_t size)
     : memSize(size), memPool(pool), bitset((uint8_t *)pool, memSize) {
-  memPool += memSize / 257 / 8 + 1;
+  //TODO: maybe + 1 
+  memPool += memSize / 257 / 8;
   memSize -= memSize % 257 + memSize / 257;
 
   for (auto &freeBlock : freeBlocks)
